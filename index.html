@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Elements and Forms</title>
+        <style>
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                padding: 20px;
+                background-color: white;
+                line-height: 2.0;
+            }
+
+            h1, h2{
+                color: black;
+            }
+
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+
+            th, td {
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #e0e0e0;
+            }
+
+            form {
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                max-width: 600px;
+                margin: 20px auto;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+              }
+          
+              label {
+                display: block;
+                margin-top: 15px;
+                font-weight: bold;
+              }
+          
+              input, select {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+              }
+          
+              .inline {
+                width: auto;
+                margin-right: 10px;
+              }
+          
+              button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #007BFF;
+                color: rgb(251, 250, 250);
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+              }
+          
+              button:hover {
+                background-color: #6bb300;
+              }
+          
+              .media {
+                margin-top: 30px;
+              }
+
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to Elements and Form Page</h1>
+
+        <!--Ordered List with roman numerals-->
+        <h2>Man In The Arena</h2>
+        <ol type="I">
+           <li>Credit belongs to the man who is actually in the arena.</li>
+           <li>Whose face is marred by dust,sweat and blood.</li>
+           <li>Who strives valiantly, who errs and comes up short again and again.</li>
+        </ol>
+
+        <!-- External Image From pexel.com-->
+         <h2>The Arena</h2>
+         <img src="pexels-mario-cuadros-1166886-2413089.jpg"
+              alt="man mowing The Camp Nou(THE ARENA)" 
+              width="600">
+
+        <!-- Contact Table-->
+         <h2>Contact Directory</h2>
+         <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sophia</td>
+                    <td>0712345678</td>
+                    <td>754-321</td>
+                    <td>sophie@email.com</td>
+                </tr>
+                <tr>
+                    <td>Nelsha</td>
+                    <td>0778765421</td>
+                    <td>764-320</td>
+                    <td>nelly@email.com</td>
+                </tr>
+                <tr>
+                    <td>Mariam</td>
+                    <td>0715545678</td>
+                    <td>754-123</td>
+                    <td>mariam@email.com</td>
+                </tr>
+                <tr>
+                    <td>Ibrahim</td>
+                    <td>0714650632</td>
+                    <td>754-871</td>
+                    <td>ibrahim@email.com</td>
+                </tr>
+                <tr>
+                    <td>Shaban</td>
+                    <td>0787353446</td>
+                    <td>634-321</td>
+                    <td>shaban@email.com</td>
+                </tr>
+            </tbody>
+         </table>
+         <!-- Registration Form-->
+          <h2>Registration Form</h2>
+          <form action="#" method="post" aria-label="User registration form">
+
+            <!--Name-->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name " placeholder="Full Name" required-pattern="^[A-Za-z\s]{2,50}$"
+                   title="Name should only contain letters and spaces, 2 to 50 characters.">
+
+            <!-- Email-->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="email@domain.com" required>
+              
+            <!-- Password-->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Choose a strong password" required-pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}" 
+                      title="At least 8 characters with 1 uppercase, 1 lowercase and 1 number.">
+
+            <!-- Date field-->
+            <label for="dob">Date Of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <!-- Gender (Radio Buttons) -->
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" class="inline" required>
+            <label for="male" class="inline">Male</label>
+            <input type="radio" id="female" name="gender" value="female" class="inline">
+            <label for="female" class="inline">Female</label>
+            <input type="radio" id="other" name="gender" value="other" class="inline">
+            <label for="other" class="inline">Other</label>
+
+            <!-- Country (Dropdown) -->
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+               <option value="">--Select--</option>
+               <option value="usa">USA</option>
+               <option value="uk">UK</option>
+               <option value="kenya">Kenya</option>
+               <option value="canada">Canada</option>
+               <option value="brazil">Brazil</option>
+               <option value="argentina">Argentina</option>
+               <option value="south africa">South Africa</option>
+               <option value="uganda">Uganda</option>
+               <option value="ethiopia">Ethiopia</option>
+               <option value="tanzania">Tanzania</option>
+
+            </select>
+
+            <!-- Interests (Checkboxes) -->
+            <label>Interests:</label>
+            <input type="checkbox" id="coding" name="interests" value="coding" class="inline">
+            <label for="coding" class="inline">Coding</label>
+            <input type="checkbox" id="music" name="interests" value="music" class="inline">
+            <label for="music" class="inline">Music</label>
+            <input type="checkbox" id="travel" name="interests" value="travel" class="inline">
+            <label for="travel" class="inline">Travel</label>
+
+
+            <!-- Submit button -->
+             <button type="submit">Register</button>
+          </form>
+
+          <!-- Multimedia Elements -->
+           <div class="media">
+            <h2>Media</h2>
+
+            <!-- Audio -->
+             <p>Chilled music audio:</p>
+             <audio controls>
+                <source src="amapiano-afrobeat-275513.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+             </audio>
+
+             <!-- Video -->
+              <p> Watch The Camp Nou Arena from a far</p>
+              <video width="500" controls>
+                <source src="Camp Nou Arena.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+           </div>
+
+    </body>
+</html>
